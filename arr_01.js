@@ -29,7 +29,14 @@ Verwenden Sie dafür die untenstehenden Arrays
 */
 
 const controls = ["<", "</", ">"];
-const tags = ["html","head","head","body","h1","h1","p","p","body","html"];
+const tags = [  "html","head","head","body",
+                "h1","h1",
+                "p","p",
+                "ul","li","li","li","li","li","li","ul",
+                "p","p",
+                "body","html"
+            ];
+
 let stack = [];
 
 // Modul: HTML-Synthese | Test
