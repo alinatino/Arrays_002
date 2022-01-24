@@ -2,22 +2,22 @@
 
 // push() / pop()
 // push --> Daten rein ... (+)
-let arr = [];
-output(arr);
-arr.push("Ich");
-output(arr);
-arr.push("bin");
-output(arr);
-arr.push("Max");
-output(arr);
+// let arr = [];
+// output(arr);
+// arr.push("Ich");
+// output(arr);
+// arr.push("bin");
+// output(arr);
+// arr.push("Max");
+// output(arr);
 
 // pop() --> Daten raus ... (-)
-output(arr.pop());
-output(arr);
-output(arr.pop());
-output(arr);
-output(arr.pop());
-output(arr);
+// output(arr.pop());
+// output(arr);
+// output(arr.pop());
+// output(arr);
+// output(arr.pop());
+// output(arr);
 
 
 /*
@@ -33,7 +33,7 @@ const tags = ["html","head","head","body","h1","h1","p","p","body","html"];
 let stack = [];
 
 // Modul: HTML-Synthese | Test
-// output(getHTML());
+output(getHTML());
 function getHTML() {
 
     let htmlStr = "";
@@ -50,13 +50,20 @@ function getHTML() {
 }
 
 function isOpenElement(tag) {
-    // if (????) {
-    //     return true;
-    // } else {
-    //     return false;
-    // }
+    
+    // tag liegt nicht oben! --> neu, open
+    let cond = (tag != stack[stack.length-1])  
+    
+    if (cond) {  // open
+        stack.push(tag);
+        output(stack);
+        return true;
+    } else {  // close
+        stack.pop();
+        output(stack);
+        return false;
+    }
      
-    return true;
 }
 
 // Modul: Zusammenbau der Elements: <tagStr> --> Tests:
