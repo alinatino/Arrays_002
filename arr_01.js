@@ -1,5 +1,24 @@
 /*********   Theorie **********/
 
+// push() / pop()
+// push --> Daten rein ... (+)
+let arr = [];
+output(arr);
+arr.push("Ich");
+output(arr);
+arr.push("bin");
+output(arr);
+arr.push("Max");
+output(arr);
+
+// pop() --> Daten raus ... (-)
+output(arr.pop());
+output(arr);
+output(arr.pop());
+output(arr);
+output(arr.pop());
+output(arr);
+
 
 /*
 Aufgabe:
@@ -20,38 +39,40 @@ function getHTML() {
     let htmlStr = "";
 
     for (let i = 0; i < tags.length; i++) {
-        htmlStr += getElement(tags[i],"open");
-        // htmlStr += getElement(tags[i],"close");
+        if (isOpenElement(tags[i])) { 
+            htmlStr += getElement(tags[i],"open");
+        } else {
+            htmlStr += getElement(tags[i],"close");
+        }
     }
 
     return htmlStr;
 }
 
-// Modul: Zusammenbau der Elements: <tagStr> --> Tests:
-output(getElement(tags[1],"open"));
-output(getElement(tags[1],"close"));
-output(getElement(tags[1]));
-function getElement(tag,op) {
-    // switch (op) {
-    //     case "open": 
-    //         return controls[0] + tag + controls[2];
-    //     case "close":
-    //         return controls[1] + tag + controls[2];
-    //     default:
-    //       return "#!?";
+function isOpenElement(tag) {
+    // if (????) {
+    //     return true;
+    // } else {
+    //     return false;
     // }
-
-    if (op == "open") {
-        return controls[0] + tag + controls[2];
-    } 
-    else if(op == "close"){
-        return controls[1] + tag + controls[2];
-    }
-    else {
-        return "#!?";
-    }
+     
+    return true;
 }
 
+// Modul: Zusammenbau der Elements: <tagStr> --> Tests:
+// output(getElement(tags[1],"open"));
+// output(getElement(tags[1],"close"));
+// output(getElement(tags[1]));
+function getElement(tag,op) {
+    switch (op) {
+        case "open": 
+            return controls[0] + tag + controls[2];
+        case "close":
+            return controls[1] + tag + controls[2];
+        default:
+          return "#!?";
+    }
+}
 
 // Modul: Ausgabe | Test
 //output("hi");
